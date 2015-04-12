@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>My title</title>
+	</head>
+
+	<body>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+		<script>
+		var svgContainer = d3.select("body").append("svg")
+					.attr("width", 800)
+					.attr("height", 400);
+
+		var circle = svgContainer.append("circle")
+					.attr("cx", 150)
+					.attr("cy", 100)
+					.attr("r", 20)
+					.style('fill', 'rgba(255,0,0,1)')
+					.on("click", function() { 
+						d3.select(this)
+							.transition().duration(480)
+							.attr("cx", 50);
+						});
+
+		</script>
+	</body>
+</html>
